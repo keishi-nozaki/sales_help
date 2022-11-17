@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IHI原動機　営業支援システム</title>
+    <meta name="description" content=“世界を変えるチーズを作ろう。チーズアカデミーは、チーズ職人を養成するための学校です。”>
+    <meta property="og:title" content="チーズアカデミー">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    <meta property="og:site_name" content="チーズアカデミー" />
+    <meta property="og:description" content="世界を変えるチーズを作ろう。チーズアカデミーは、チーズ職人を養成するための学校です。" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="#">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sanitize.css" />
+    <link rel="stylesheet" type="text/css" href="/00_first_work/css/style.css" />
+    <!-- あらかじめcssを読み込んでいるので設定しなくてOK-->
+</head>
+
+<body>
+    <strong class="daimei1200">1200PS 営業戦術</strong>
+    <div>
+        ＜当社主機関　6M26AGTE＞
+        <br>
+        ＜競合メーカー　阪神内燃機LH26＞
+        <br>
+        ＜阪神と比較した場合の当社優位点＞
+        <br>
+        ・燃料消費率が格段に優れている、阪神と比べ7g良い
+        <br>
+        ・ファイヤーリング付き_潤滑油消費量を50％カット
+        <br>
+        ・回転数が20min低い
+        <br>
+        ・回転数が低いため、プロペラの推進効率が良くなる
+    </div>
+
+    <img src="/00_first_work/img/低速エンジンカタログ.png" alt="" class="katalogu">
+
+</body>
+
+<div>営業記録　
+    　　　　<br>
+    船主名、面談日、面談内容を記述のこと
+    <br>
+    <span class="save">※必ずSAVEを押し、営業記録を継続的に残しておくこと</span>
+</div>
+
+</html>
+
+
+
+
+<textarea id="text_area"></textarea>
+<ul>
+    <li id="save">Save</li>
+    <li id="clear">Clear</li>
+</ul>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+    // 保存
+    $("#save").on("click", function () {
+        const text = $("#text_area").val();
+        localStorage.setItem("memo", text);
+    });
+
+    // 削除
+    $('#clear').on('click', function () {
+        localStorage.removeItem('memo');
+        $('#text_area').val('');
+    });
+
+    // // コンソールに入れたでデータの読み出し
+    if (localStorage.getItem('memo')) {
+        const text = localStorage.getItem('memo');
+        $('#text_area').val(text);
+
+    }
